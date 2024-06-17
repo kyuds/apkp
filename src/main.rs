@@ -48,9 +48,8 @@ fn main() {
 fn check_adb_exists() -> bool {
     Command::new("which")
         .arg("adb")
-        .output()
+        .status()
         .expect("'which adb' failed to run")
-        .status
         .success()
 }
 
